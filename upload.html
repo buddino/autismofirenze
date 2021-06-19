@@ -13,17 +13,29 @@
             margin: 1em auto;
             transition: background 0.2s;
         }
+
         .dropzone:hover {
             background: aliceblue;
+        }
+
+        .dz-preview {
+            box-shadow: 0px 0px 10px 0px #000000;
+        }
+
+        .dropzone .dz-preview.dz-file-preview .dz-image {
+            border-radius: 0;
         }
     </style>
     <script>
         window.onload = function () {
             Dropzone.options.myAwesomeDropzone = {
                 parallelUploads: 5,
-                acceptedFiles: 'image/png'
+                acceptedFiles: 'image/png',
             };
+            ComAutDrop = Dropzone.instances[0];
+            ComAutDrop.on("queuecomplete", console.log);
         };
+
     </script>
     <form action="upload.php" class="dropzone" id="my-awesome-dropzone">
         <div class="dz-message" data-dz-message><span>Click qua o trascina le immagini da caricare (file .png)</span>

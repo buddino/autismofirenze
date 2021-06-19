@@ -1,6 +1,8 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 $filename = $_GET['img'];
-$path = 'figures/'.$filename;
+$path = 'images/'.$filename;
 if (file_exists($path)) {
     //Set the content-type header as appropriate
     $image_info = getimagesize($path);
