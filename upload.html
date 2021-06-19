@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Carica nuove immagini</title>
+    <link rel="stylesheet" href="js/dropzone.css">
+</head>
+
+<body>
+    <style>
+        .dropzone {
+            width: 50vw;
+            margin: 1em auto;
+            transition: background 0.2s;
+        }
+        .dropzone:hover {
+            background: aliceblue;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            Dropzone.options.myAwesomeDropzone = {
+                parallelUploads: 5,
+                acceptedFiles: 'image/png'
+            };
+        };
+    </script>
+    <form action="upload.php" class="dropzone" id="my-awesome-dropzone">
+        <div class="dz-message" data-dz-message><span>Click qua o trascina le immagini da caricare (file .png)</span>
+        </div>
+    </form>
+    <script src="js/dropzone.js"></script>
+</body>
+
+</html>

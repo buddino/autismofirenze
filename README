@@ -1,0 +1,6 @@
+PWA in subfolder (e.g. www.example.com/comaut)
+
+change <base href="/comaut/"> in index.html <-- Notice the trailing slash
+ionic build --prod -- --base-href="/comaut/app"
+
+
